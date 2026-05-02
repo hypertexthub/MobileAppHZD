@@ -1,0 +1,984 @@
+{
+    "machines": [
+        {
+            "id": 1,
+            "name": "Watchers",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": "Disorientation"
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Eye",
+                    "description": "Override Codes"
+                }
+            ],
+            "main-image": "",
+            "class": "recon",
+            "size_weight": "small",
+            "weakness": "",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 2,
+            "name": "Strider",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "BlazeCannister",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "small",
+            "weakness": "Fire, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 3,
+            "name": "Grazer",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": ""
+                },
+                {
+                    "type": "Rotor Blades",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "BlazeCannisters",
+                    "description": ""
+                },
+                {
+                    "type": "Rotor Blades",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "small",
+            "weakness": "Fire, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 4,
+            "name": "Scrapper",
+            "attacks": [
+                {
+                    "type": "MeleeCharge",
+                    "description": ""
+                },
+                {
+                    "type": "EnergyCannon",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Radar",
+                    "description": ""
+                },
+                {
+                    "type": "Power Cell",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "small",
+            "weakness": "Shock, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 5,
+            "name": "Broadhead",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": ""
+                },
+                {
+                    "type": "ChargeAttack",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "BlazeCanister",
+                    "description": ""
+                },
+                {
+                    "type": "Horns",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "small",
+            "weakness": "",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 6,
+            "name": "Lancehorn",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": ""
+                },
+                {
+                    "type": "Drill Horns",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Drill Horns",
+                    "description": ""
+                },
+                {
+                    "type": "FreezeCannister",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "small",
+            "weakness": "Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 7,
+            "name": "Longleg",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": ""
+                },
+                {
+                    "type": "Sonic Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Charge",
+                    "description": ""
+                },
+                {
+                    "type": "CallBackup",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Concussion Sac",
+                    "description": ""
+                },
+                {
+                    "type": "Antennae",
+                    "description": ""
+                },
+                {
+                    "type": "Wings",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "recon",
+            "size_weight": "small",
+            "weakness": "Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 8,
+            "name": "Trampler",
+            "attacks": [
+                {
+                    "type": "Fire Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Flaming Charge",
+                    "description": ""
+                },
+                {
+                    "type": "Rock Throw",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "ExcavationHorns",
+                    "description": ""
+                },
+                {
+                    "type": "Power Cell",
+                    "description": ""
+                },
+                {
+                    "type": "Processor Unit",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "medium",
+            "weakness": "Shock, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 9,
+            "name": "Sawtooth",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Blaze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Combat",
+            "size_weight": "medium",
+            "weakness": "",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 10,
+            "name": "Shell-Walker",
+            "attacks": [
+                {
+                    "type": "Lightning Shot",
+                    "description": ""
+                },
+                {
+                    "type": "Claw Attack",
+                    "description": ""
+                },
+                {
+                    "type": "Electric Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Shield",
+                    "description": ""
+                },
+                {
+                    "type": "Slam",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Power Generator",
+                    "description": ""
+                },
+                {
+                    "type": "Lightning Claw",
+                    "description": ""
+                },
+                {
+                    "type": "Shield Claw",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Transport",
+            "size_weight": "medium",
+            "weakness": "Shock, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 11,
+            "name": "Bellowbacks",
+            "attacks": [
+                {
+                    "type": "Flamethrower/Cryo Spray",
+                    "description": ""
+                },
+                {
+                    "type": "Fireball/Ice Bomb",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Cargo Sac",
+                    "description": ""
+                },
+                {
+                    "type": "Blaze / Freeze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Gullet",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Transport",
+            "size_weight": "medium",
+            "weakness": "Tear, Fire",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 12,
+            "name": "Charger",
+            "attacks": [
+                {
+                    "type": "Melee",
+                    "description": ""
+                },
+                {
+                    "type": "Charge",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Blaze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Horns",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "small",
+            "weakness": "Fire, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 13,
+            "name": "Stalker",
+            "attacks": [
+                {
+                    "type": "Darts",
+                    "description": ""
+                },
+                {
+                    "type": "Mines",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Whip",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Dart Gun",
+                    "description": ""
+                },
+                {
+                    "type": "Mine Launcher",
+                    "description": ""
+                },
+                {
+                    "type": "Stealth Generator",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Combat",
+            "size_weight": "small",
+            "weakness": "",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 14,
+            "name": "Glinthawk",
+            "attacks": [
+                {
+                    "type": "Dive Attack",
+                    "description": ""
+                },
+                {
+                    "type": "Ice Bomb",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Beak",
+                    "description": ""
+                },
+                {
+                    "type": "Freeze Sac",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "Lightweight",
+            "weakness": "Fire, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 15,
+            "name": "Corruptor",
+            "attacks": [
+                {
+                    "type": "Flechette Grenades",
+                    "description": ""
+                },
+                {
+                    "type": "Spikes",
+                    "description": ""
+                },
+                {
+                    "type": "Pounce",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Heat Core",
+                    "description": ""
+                },
+                {
+                    "type": "Mounted Launchers",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Combat",
+            "size_weight": "medium",
+            "weakness": "",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 16,
+            "name": "Ravager",
+            "attacks": [
+                {
+                    "type": "Cannon Fire",
+                    "description": ""
+                },
+                {
+                    "type": "Pounce",
+                    "description": ""
+                },
+                {
+                    "type": "Claw",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Freeze Canisters",
+                    "description": ""
+                },
+                {
+                    "type": "Power Cell",
+                    "description": ""
+                },
+                {
+                    "type": "Ravager Cannon",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Combat",
+            "size_weight": "medium",
+            "weakness": "Fire, Tear, Shock",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 17,
+            "name": "Snapmaw",
+            "attacks": [
+                {
+                    "type": "Ice Bomb",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Whip",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Blaze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Freeze Sac",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "",
+            "size_weight": "",
+            "weakness": "Fire, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 18,
+            "name": "Rockbreaker",
+            "attacks": [
+                {
+                    "type": "Charge",
+                    "description": ""
+                },
+                {
+                    "type": "Upwards Thrust",
+                    "description": ""
+                },
+                {
+                    "type": "Breach",
+                    "description": ""
+                },
+                {
+                    "type": "Rock Volley",
+                    "description": ""
+                },
+                {
+                    "type": "Stone Shower",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Digging Arms",
+                    "description": ""
+                },
+                {
+                    "type": "Exhaust Port",
+                    "description": ""
+                },
+                {
+                    "type": "Fuel Sac",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Acquisition",
+            "size_weight": "Heavyweight",
+            "weakness": "Freeze, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 19,
+            "name": "Behemoth",
+            "attacks": [
+                {
+                    "type": "Load Launcher",
+                    "description": ""
+                },
+                {
+                    "type": "Charge",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Crate Holders",
+                    "description": ""
+                },
+                {
+                    "type": "Freeze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Force Loader",
+                    "description": ""
+                },
+                {
+                    "type": "Power Cell",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Transport",
+            "size_weight": "Heavyweight",
+            "weakness": "Freeze, Tear, Shock",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 20,
+            "name": "Thunderjaw",
+            "attacks": [
+                {
+                    "type": "Cannon Fire",
+                    "description": ""
+                },
+                {
+                    "type": "Laser Discs",
+                    "description": ""
+                },
+                {
+                    "type": "Charge",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Whip",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Blaze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Cannon",
+                    "description": ""
+                },
+                {
+                    "type": "Data Nexus",
+                    "description": ""
+                },
+                {
+                    "type": "Data Nexus",
+                    "description": ""
+                },
+                {
+                    "type": "Disc Launcher",
+                    "description": ""
+                },
+                {
+                    "type": "Freeze Canisters",
+                    "description": ""
+                },
+                {
+                    "type": "Heart",
+                    "description": ""
+                },
+                {
+                    "type": "Power Cells",
+                    "description": ""
+                },
+                {
+                    "type": "Radar",
+                    "description": ""
+                },
+                {
+                    "type": "Tail",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "Combat",
+            "size_weight": "Heavyweight",
+            "weakness": "Freeze, Tear, Shock",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 21,
+            "name": "Stormbird",
+            "attacks": [
+                {
+                    "type": "Lightning Gun",
+                    "description": ""
+                },
+                {
+                    "type": "Dive",
+                    "description": ""
+                },
+                {
+                    "type": "Gust",
+                    "description": ""
+                },
+                {
+                    "type": "Talon Lunge",
+                    "description": ""
+                },
+                {
+                    "type": "Peck",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Blaze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Engines",
+                    "description": ""
+                },
+                {
+                    "type": "Freeze Canister",
+                    "description": ""
+                },
+                {
+                    "type": "Lightning Gun",
+                    "description": ""
+                },
+                {
+                    "type": "Override Codes",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "",
+            "size_weight": "",
+            "weakness": "Fire, Freeze, Tear",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 22,
+            "name": "Deathbringer",
+            "attacks": [
+                {
+                    "type": "Cannon Fire",
+                    "description": ""
+                },
+                {
+                    "type": "Flamethrower",
+                    "description": ""
+                },
+                {
+                    "type": "Grenade Launcher",
+                    "description": ""
+                },
+                {
+                    "type": "Swarm Launcher",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Body",
+                    "description": ""
+                },
+                {
+                    "type": "Cannons, Launchers & Gun Turrets",
+                    "description": ""
+                },
+                {
+                    "type": "Cooling Rods & Heat Vents",
+                    "description": ""
+                },
+                {
+                    "type": "Stabilizers",
+                    "description": ""
+                },
+                {
+                    "type": "Core",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "",
+            "size_weight": "",
+            "weakness": "Fire, Shock",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 23,
+            "name": "Tailneck",
+            "attacks": [
+                {
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "recon",
+            "size_weight": "Heavyweight",
+            "weakness": "",
+            "strength": "",
+            "PS5-photo": ""
+        },
+        {
+            "id": 24,
+            "name": "Corrupted machines",
+            "attacks": [
+                {
+                    "type": "Please refer to each machine",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "vulnerabilities": [
+                {
+                    "type": "Please refer to each machine",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                },
+                {
+                    "type": "",
+                    "description": ""
+                }
+            ],
+            "main-image": "",
+            "class": "",
+            "size_weight": "",
+            "weakness": "",
+            "strength": "",
+            "PS5-photo": ""
+        }
+    ]
+}
