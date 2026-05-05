@@ -75,3 +75,20 @@ app.post("/machines/:id/vulnerabilities", (req, res) => {
         return res.json({ message: "Vulnerability added" });
     });
 });
+
+//remove vulnerability
+
+app.delete("/vulnerabilities/:id", (req, res) => {
+    const id = req.params.id;
+    const machineId = req.body.machine_id;
+
+    const q = `
+        DELETE FROM vulnerabilities 
+        WHERE id = ? AND machine_id = ?
+    `;
+
+    db.query(q, [id, machineId], (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.json({ message: "Vulnerability deleted" });
+    });
+});

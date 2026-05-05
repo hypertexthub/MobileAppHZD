@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import Button from './Button'
 import { useNavigate } from "react-router-dom";
-import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import MyModal from "./Modal";
+import { FaPlus } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 const Singlemachine = ({ machines, onEdit }) => {
 
@@ -31,7 +32,7 @@ const Singlemachine = ({ machines, onEdit }) => {
 
     if (!machine) return <p>Loading...</p>;
 
-    //updating vulnerability
+    //adding vulnerability
 
     const handleAddVulnerability = (newVuln) => {
         fetch(`http://localhost:5001/machines/${id}/vulnerabilities`, {
@@ -40,6 +41,21 @@ const Singlemachine = ({ machines, onEdit }) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newVuln)
+        })
+            .then(() => window.location.reload())
+            .catch(err => console.error(err));
+    };
+
+    //deleting vunerability
+    const handleDeleteVulnerability = (vulnId) => {
+        fetch(`http://localhost:5001/vulnerabilities/${vulnId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                machine_id: machine.id
+            })
         })
             .then(() => window.location.reload())
             .catch(err => console.error(err));
@@ -62,15 +78,15 @@ const Singlemachine = ({ machines, onEdit }) => {
             <div className="flexrowinfo">
 
                 <div className="aspects">
-                    <h4>Aspects:</h4>
+                    <h4>Aspects</h4>
                     <p><strong>Class: </strong>{machine.class}</p>
                     <p><strong>Size: </strong>{machine.size_weight}</p>
                     <p><strong>Weakness: </strong>{machine.weakness}</p>
                     <p><strong>Strength: </strong>{machine.strength}</p>
                 </div>
 
-                <div className="aspects">
-                    <h4>Attacks:</h4>
+                <div className="">
+                    <h4>Attacks</h4>
                     {machine.attacks && machine.attacks.length > 0 ? (
                         machine.attacks.map((attack, index) => (
                             <div key={index}>
@@ -82,25 +98,32 @@ const Singlemachine = ({ machines, onEdit }) => {
                     )}
                 </div>
 
-                <div className="aspects">
-                    <h4>Vulnerabilities:</h4>
+                <div className="">
+                    <div className="flexrregular">
+                        <h4>Vulnerabilities</h4>
+                        <button className="buttonedit">
+                            <FaPlus className="icons" onClick={() => setIsOpen(true)}
+                            />
+                        </button>
+                        <MyModal isOpen={isOpen} onClose={() => setIsOpen(false)} onEdit={handleAddVulnerability} />
+                    </div>
+                    <div className="vulnerabilities">
+                        {machine.vulnerabilities && machine.vulnerabilities.length > 0 ? (
+                            machine.vulnerabilities.map((vulnerability, index) => (
+                                <div className="flexrregularvul" key={index}>
+                                    <p>{vulnerability.type}</p>
+                                    <button className="buttonedit" onClick={() => handleDeleteVulnerability(vulnerability.id)}>
+                                        <FaTrash className="icons" />
+                                    </button>
+                                </div>
+                            ))
+                        ) : (
+                            <p>No vulnerabilities available</p>
 
-                    {machine.vulnerabilities && machine.vulnerabilities.length > 0 ? (
-                        machine.vulnerabilities.map((vulnerability, index) => (
-                            <div key={index}>
-                                <p>{vulnerability.type}</p>
-                                {/* <p><strong>Description:</strong> {attack.description || "N/A"}</p> */}
-                            </div>
-                        ))
-                    ) : (
-                        <p>No vulnerabilities available</p>
-                    )}
+                        )}
 
-                    <button className="buttonedit">
-                        <FaEdit className="icons" onClick={() => setIsOpen(true)}
-                        />
-                    </button>
-                    <MyModal isOpen={isOpen} onClose={() => setIsOpen(false)} onEdit={handleAddVulnerability} />
+
+                    </div>
                 </div>
 
             </div>

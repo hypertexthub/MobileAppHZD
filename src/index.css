@@ -136,12 +136,33 @@ code {
   padding: 10px;
 }
 
+
+
 .flexrow {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
 
+}
+
+.flexrregular {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.flexrregularvul {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.flexcregular {
+  display: flex;
+  flex-direction: column;
 }
 
 .flexcolumn {
@@ -180,7 +201,7 @@ code {
 }
 
 .icons {
-  font-size: 35px;
+  font-size: 20px;
   color: #9ca3af;
 }
 
@@ -190,4 +211,9 @@ code {
   background: none;
   padding: 0;
   cursor: pointer;
+}
+
+.vulnerabilities {
+  max-width: 170px;
+  flex-wrap: wrap;
 }
