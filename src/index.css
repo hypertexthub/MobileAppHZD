@@ -183,3 +183,11 @@ code {
   font-size: 35px;
   color: #9ca3af;
 }
+
+.buttonedit {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}

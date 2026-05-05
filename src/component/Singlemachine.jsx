@@ -3,12 +3,18 @@ import Button from './Button'
 import { useNavigate } from "react-router-dom";
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useState } from "react";
+import Modal from "./Modal";
+import MyModal from "./Modal";
 
-const Singlemachine = ({ machines }) => {
+const Singlemachine = ({ machines, onEdit }) => {
 
     const { id } = useParams();
     const machine = machines.find((m) => m.id === Number(id));
     const navigate = useNavigate();
+
+    const [isOpen, setIsOpen] = useState(false);
+
 
     return (
         <div className="">
@@ -17,7 +23,6 @@ const Singlemachine = ({ machines }) => {
                 <Button text="All machines" color="" onClick={() => navigate(`/`)} />
             </div>
             <h2>{machine.name}</h2>
-
 
             <img
                 src={machine["main-image"]}
@@ -61,10 +66,12 @@ const Singlemachine = ({ machines }) => {
                     ) : (
                         <p>No attacks available</p>
                     )}
-                    <Link to={``}>
-                        <FaEdit className="icons" />
-                    </Link>
 
+                    <button className="buttonedit">
+                        <FaEdit className="icons" onClick={() => setIsOpen(true)}
+                        />
+                    </button>
+                    <MyModal isOpen={isOpen} onClose={() => setIsOpen(false)} onEdit={(newVuln) => onEdit(machine.id, newVuln)} />
                 </div>
 
             </div>
@@ -76,4 +83,4 @@ const Singlemachine = ({ machines }) => {
     )
 }
 
-export default Singlemachine
+export default Singlemachine;

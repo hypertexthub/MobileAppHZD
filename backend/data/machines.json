@@ -6,7 +6,23 @@
             "attacks": [
                 {
                     "type": "Melee",
-                    "description": "Disorientation"
+                    "description": ""
+                },
+                {
+                    "type": "Energy Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Blinding Stun Flash",
+                    "description": ""
+                },
+                {
+                    "type": "Jumping Smash",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Strike",
+                    "description": ""
                 }
             ],
             "vulnerabilities": [
@@ -15,11 +31,11 @@
                     "description": "Override Codes"
                 }
             ],
-            "main-image": "",
-            "class": "recon",
-            "size_weight": "small",
-            "weakness": "",
-            "strength": "",
+            "main-image": "/src/assets/images/1.png",
+            "class": "Recon",
+            "size_weight": "Small",
+            "weakness": "Eye",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -27,7 +43,23 @@
             "name": "Strider",
             "attacks": [
                 {
-                    "type": "Melee",
+                    "type": "Charge",
+                    "description": ""
+                },
+                {
+                    "type": "Double Strike",
+                    "description": ""
+                },
+                {
+                    "type": "Hind Leg Strike",
+                    "description": ""
+                },
+                {
+                    "type": "Rodeo Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Spin Kick",
                     "description": ""
                 }
             ],
@@ -41,11 +73,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/2.png",
             "class": "Acquisition",
-            "size_weight": "small",
+            "size_weight": "Small",
             "weakness": "Fire, Tear",
-            "strength": "",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -53,11 +85,23 @@
             "name": "Grazer",
             "attacks": [
                 {
-                    "type": "Melee",
+                    "type": "Charge",
                     "description": ""
                 },
                 {
-                    "type": "Rotor Blades",
+                    "type": "Front Leg Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Hind Leg Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Leaping Front Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Upward Stab",
                     "description": ""
                 }
             ],
@@ -75,11 +119,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/3.png",
             "class": "Acquisition",
-            "size_weight": "small",
+            "size_weight": "Small",
             "weakness": "Fire, Tear",
-            "strength": "",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -87,11 +131,23 @@
             "name": "Scrapper",
             "attacks": [
                 {
-                    "type": "MeleeCharge",
+                    "type": "Laser Burst",
                     "description": ""
                 },
                 {
-                    "type": "EnergyCannon",
+                    "type": "Laser Lead Up",
+                    "description": ""
+                },
+                {
+                    "type": "Laser Sweep",
+                    "description": ""
+                },
+                {
+                    "type": "Claw Swipe",
+                    "description": ""
+                },
+                {
+                    "type": "Grinder Jaw Swipe",
                     "description": ""
                 }
             ],
@@ -109,11 +165,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/4.png",
             "class": "Acquisition",
-            "size_weight": "small",
+            "size_weight": "Small",
             "weakness": "Shock, Tear",
-            "strength": "",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -121,11 +177,23 @@
             "name": "Broadhead",
             "attacks": [
                 {
-                    "type": "Melee",
+                    "type": "Charge",
                     "description": ""
                 },
                 {
-                    "type": "ChargeAttack",
+                    "type": "Double Strike",
+                    "description": ""
+                },
+                {
+                    "type": "Hind Leg Strike",
+                    "description": ""
+                },
+                {
+                    "type": "Rodeo Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Spin Kick",
                     "description": ""
                 }
             ],
@@ -143,11 +211,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/5.png",
             "class": "Acquisition",
-            "size_weight": "small",
-            "weakness": "",
-            "strength": "",
+            "size_weight": "Small",
+            "weakness": "Fire, Tear",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -155,11 +223,31 @@
             "name": "Lancehorn",
             "attacks": [
                 {
-                    "type": "Melee",
+                    "type": "Charge",
                     "description": ""
                 },
                 {
-                    "type": "Drill Horns",
+                    "type": "Front Leg Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Gore and Flip",
+                    "description": ""
+                },
+                {
+                    "type": "Hind Leg Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Leaping Front Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Leaping Horn Stab ",
+                    "description": ""
+                },
+                {
+                    "type": "Upward Stab",
                     "description": ""
                 }
             ],
@@ -177,11 +265,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/6.png",
             "class": "Acquisition",
-            "size_weight": "small",
-            "weakness": "Tear",
-            "strength": "",
+            "size_weight": "Small",
+            "weakness": "Tear, Freeze",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -223,11 +311,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
-            "class": "recon",
-            "size_weight": "small",
-            "weakness": "Tear",
-            "strength": "",
+            "main-image": "/src/assets/images/7.png",
+            "class": "Recon",
+            "size_weight": "Small",
+            "weakness": " Shock, Tear",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -235,15 +323,27 @@
             "name": "Trampler",
             "attacks": [
                 {
-                    "type": "Fire Blast",
+                    "type": "Jet Blast",
                     "description": ""
                 },
                 {
-                    "type": "Flaming Charge",
+                    "type": "Beak Thrust",
                     "description": ""
                 },
                 {
-                    "type": "Rock Throw",
+                    "type": "Chicken Scratch",
+                    "description": ""
+                },
+                {
+                    "type": "Dashing Claw Jump",
+                    "description": ""
+                },
+                {
+                    "type": "Jumping Wing Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Stun Blast",
                     "description": ""
                 }
             ],
@@ -265,11 +365,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/8.png",
             "class": "Acquisition",
-            "size_weight": "medium",
-            "weakness": "Shock, Tear",
-            "strength": "",
+            "size_weight": "Medium",
+            "weakness": "Shock, Tear, Freeze",
+            "strength": "Fire",
             "PS5-photo": ""
         },
         {
@@ -277,7 +377,19 @@
             "name": "Sawtooth",
             "attacks": [
                 {
-                    "type": "Melee",
+                    "type": "Berserker Fury",
+                    "description": ""
+                },
+                {
+                    "type": "Claw Swipe",
+                    "description": ""
+                },
+                {
+                    "type": "Jaw Smash",
+                    "description": ""
+                },
+                {
+                    "type": "Jumping Jaw Smash",
                     "description": ""
                 }
             ],
@@ -291,11 +403,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/9.png",
             "class": "Combat",
-            "size_weight": "medium",
-            "weakness": "",
-            "strength": "",
+            "size_weight": "Medium",
+            "weakness": "Fire, Tear",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -303,23 +415,27 @@
             "name": "Shell-Walker",
             "attacks": [
                 {
-                    "type": "Lightning Shot",
+                    "type": "Claw Combo",
                     "description": ""
                 },
                 {
-                    "type": "Claw Attack",
+                    "type": "Multi-Claw Strike",
                     "description": ""
                 },
                 {
-                    "type": "Electric Blast",
+                    "type": "Shield Claw Strike",
                     "description": ""
                 },
                 {
-                    "type": "Shield",
+                    "type": "360 Shock",
                     "description": ""
                 },
                 {
-                    "type": "Slam",
+                    "type": "Charging Shock Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Homing Shock Blast",
                     "description": ""
                 }
             ],
@@ -341,11 +457,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/10.png",
             "class": "Transport",
-            "size_weight": "medium",
-            "weakness": "Shock, Tear",
-            "strength": "",
+            "size_weight": "Medium",
+            "weakness": "Tear",
+            "strength": "Shock",
             "PS5-photo": ""
         },
         {
@@ -353,11 +469,27 @@
             "name": "Bellowbacks",
             "attacks": [
                 {
-                    "type": "Flamethrower/Cryo Spray",
+                    "type": "Elemental Projectiles",
                     "description": ""
                 },
                 {
-                    "type": "Fireball/Ice Bomb",
+                    "type": "Elemental Spray",
+                    "description": ""
+                },
+                {
+                    "type": "Elemental Circular Spray",
+                    "description": ""
+                },
+                {
+                    "type": "Shoulder Barge",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Swipe",
+                    "description": ""
+                },
+                {
+                    "type": "Leaping Smash",
                     "description": ""
                 }
             ],
@@ -383,11 +515,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/11.png",
             "class": "Transport",
-            "size_weight": "medium",
+            "size_weight": "Medium",
             "weakness": "Tear, Fire",
-            "strength": "",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -395,11 +527,23 @@
             "name": "Charger",
             "attacks": [
                 {
-                    "type": "Melee",
+                    "type": "Charge",
                     "description": ""
                 },
                 {
-                    "type": "Charge",
+                    "type": "Double Strike",
+                    "description": ""
+                },
+                {
+                    "type": "Hind Leg Strike",
+                    "description": ""
+                },
+                {
+                    "type": "Rodeo Kick",
+                    "description": ""
+                },
+                {
+                    "type": "Spin Kick",
                     "description": ""
                 }
             ],
@@ -417,11 +561,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/12.png",
             "class": "Acquisition",
-            "size_weight": "small",
+            "size_weight": "Small",
             "weakness": "Fire, Tear",
-            "strength": "",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -429,15 +573,31 @@
             "name": "Stalker",
             "attacks": [
                 {
-                    "type": "Darts",
+                    "type": "Mine Launch",
                     "description": ""
                 },
                 {
-                    "type": "Mines",
+                    "type": "Claw Fury",
                     "description": ""
                 },
                 {
-                    "type": "Tail Whip",
+                    "type": "Claw Swipe",
+                    "description": ""
+                },
+                {
+                    "type": "Jumping Mandible Stab",
+                    "description": ""
+                },
+                {
+                    "type": "Mandible Stab",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Swipe",
+                    "description": ""
+                },
+                {
+                    "type": "Dart Gun Shot",
                     "description": ""
                 }
             ],
@@ -463,11 +623,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/13.png",
             "class": "Combat",
-            "size_weight": "small",
-            "weakness": "",
-            "strength": "",
+            "size_weight": "Small",
+            "weakness": "Shock, Tear",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -475,11 +635,15 @@
             "name": "Glinthawk",
             "attacks": [
                 {
-                    "type": "Dive Attack",
+                    "type": "Freeze Cloud",
                     "description": ""
                 },
                 {
-                    "type": "Ice Bomb",
+                    "type": "Freeze Spit",
+                    "description": ""
+                },
+                {
+                    "type": "Claw Slash",
                     "description": ""
                 }
             ],
@@ -501,11 +665,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/14.png",
             "class": "Acquisition",
             "size_weight": "Lightweight",
             "weakness": "Fire, Tear",
-            "strength": "",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -513,15 +677,31 @@
             "name": "Corruptor",
             "attacks": [
                 {
-                    "type": "Flechette Grenades",
+                    "type": "Inferno Blast",
                     "description": ""
                 },
                 {
-                    "type": "Spikes",
+                    "type": "Rock Shrapnel",
                     "description": ""
                 },
                 {
-                    "type": "Pounce",
+                    "type": "Talon Swipe 180",
+                    "description": ""
+                },
+                {
+                    "type": "Talon Swipe 360",
+                    "description": ""
+                },
+                {
+                    "type": "Talon Strike",
+                    "description": ""
+                },
+                {
+                    "type": "Corruption Spike",
+                    "description": ""
+                },
+                {
+                    "type": "Boulder Throw",
                     "description": ""
                 }
             ],
@@ -539,11 +719,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/15.png",
             "class": "Combat",
-            "size_weight": "medium",
-            "weakness": "",
-            "strength": "",
+            "size_weight": "Medium",
+            "weakness": "Fire, Tear",
+            "strength": "Corruption",
             "PS5-photo": ""
         },
         {
@@ -551,15 +731,31 @@
             "name": "Ravager",
             "attacks": [
                 {
-                    "type": "Cannon Fire",
+                    "type": "Berserker Fury",
                     "description": ""
                 },
                 {
-                    "type": "Pounce",
+                    "type": "Claw Swipe",
                     "description": ""
                 },
                 {
-                    "type": "Claw",
+                    "type": "Jumping Jaw Smash",
+                    "description": ""
+                },
+                {
+                    "type": "Mandible Stab",
+                    "description": ""
+                },
+                {
+                    "type": "Shock Jaw Smash",
+                    "description": ""
+                },
+                {
+                    "type": "Cannon Burst",
+                    "description": ""
+                },
+                {
+                    "type": "Shock Cocoon",
                     "description": ""
                 }
             ],
@@ -585,11 +781,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/16.png",
             "class": "Combat",
-            "size_weight": "medium",
-            "weakness": "Fire, Tear, Shock",
-            "strength": "",
+            "size_weight": "Medium",
+            "weakness": "Fire, Tear, Shock(Power cell), Freeze (Canister)",
+            "strength": "Shock",
             "PS5-photo": ""
         },
         {
@@ -597,11 +793,15 @@
             "name": "Snapmaw",
             "attacks": [
                 {
-                    "type": "Ice Bomb",
+                    "type": "Freeze Burst",
                     "description": ""
                 },
                 {
-                    "type": "Tail Whip",
+                    "type": "Lunge Bite",
+                    "description": ""
+                },
+                {
+                    "type": "Jumping Jaw Bite",
                     "description": ""
                 }
             ],
@@ -623,11 +823,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
-            "class": "",
-            "size_weight": "",
+            "main-image": "/src/assets/images/17.png",
+            "class": "Acquisition",
+            "size_weight": "Medium/Midweight",
             "weakness": "Fire, Tear",
-            "strength": "",
+            "strength": "Freeze",
             "PS5-photo": ""
         },
         {
@@ -635,23 +835,31 @@
             "name": "Rockbreaker",
             "attacks": [
                 {
-                    "type": "Charge",
+                    "type": "Leaping Crush",
                     "description": ""
                 },
                 {
-                    "type": "Upwards Thrust",
+                    "type": "Jaw Smash",
                     "description": ""
                 },
                 {
-                    "type": "Breach",
+                    "type": "Lunge Crush",
                     "description": ""
                 },
                 {
-                    "type": "Rock Volley",
+                    "type": "Shark Bite",
                     "description": ""
                 },
                 {
-                    "type": "Stone Shower",
+                    "type": "Spinning Smash",
+                    "description": ""
+                },
+                {
+                    "type": "Rock Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Rock Volcano",
                     "description": ""
                 }
             ],
@@ -677,11 +885,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/18.png",
             "class": "Acquisition",
             "size_weight": "Heavyweight",
             "weakness": "Freeze, Tear",
-            "strength": "",
+            "strength": "Fire",
             "PS5-photo": ""
         },
         {
@@ -689,11 +897,23 @@
             "name": "Behemoth",
             "attacks": [
                 {
-                    "type": "Load Launcher",
+                    "type": "Charge",
                     "description": ""
                 },
                 {
-                    "type": "Charge",
+                    "type": "Gravity Boulder Throw",
+                    "description": ""
+                },
+                {
+                    "type": "Gravity Purge",
+                    "description": ""
+                },
+                {
+                    "type": "Grinding Shrapnel Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Quake Smash",
                     "description": ""
                 }
             ],
@@ -719,11 +939,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/19.png",
             "class": "Transport",
             "size_weight": "Heavyweight",
-            "weakness": "Freeze, Tear, Shock",
-            "strength": "",
+            "weakness": "Freeze, Tear, Shock(Power Cell)",
+            "strength": "Shock",
             "PS5-photo": ""
         },
         {
@@ -731,11 +951,7 @@
             "name": "Thunderjaw",
             "attacks": [
                 {
-                    "type": "Cannon Fire",
-                    "description": ""
-                },
-                {
-                    "type": "Laser Discs",
+                    "type": "Bite Attack",
                     "description": ""
                 },
                 {
@@ -743,7 +959,43 @@
                     "description": ""
                 },
                 {
-                    "type": "Tail Whip",
+                    "type": "Foot Stomp",
+                    "description": ""
+                },
+                {
+                    "type": "Rushing Bite Attack",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Slam",
+                    "description": ""
+                },
+                {
+                    "type": "Tail Swipe",
+                    "description": ""
+                },
+                {
+                    "type": "Disc Launcher - 360 Attack",
+                    "description": ""
+                },
+                {
+                    "type": "Disc Launcher - Barrage",
+                    "description": ""
+                },
+                {
+                    "type": "Disc Launcher - Homing",
+                    "description": ""
+                },
+                {
+                    "type": "Laser Sweep",
+                    "description": ""
+                },
+                {
+                    "type": "Cannon Burst - Lead Up",
+                    "description": ""
+                },
+                {
+                    "type": "Cannon Burst - Side to Side",
                     "description": ""
                 }
             ],
@@ -754,10 +1006,6 @@
                 },
                 {
                     "type": "Cannon",
-                    "description": ""
-                },
-                {
-                    "type": "Data Nexus",
                     "description": ""
                 },
                 {
@@ -793,11 +1041,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
+            "main-image": "/src/assets/images/20.png",
             "class": "Combat",
             "size_weight": "Heavyweight",
-            "weakness": "Freeze, Tear, Shock",
-            "strength": "",
+            "weakness": "Fire(Leg Canister), Freeze (knee Canister), Tear, Shock(Power Cell)",
+            "strength": "Shock",
             "PS5-photo": ""
         },
         {
@@ -805,23 +1053,51 @@
             "name": "Stormbird",
             "attacks": [
                 {
-                    "type": "Lightning Gun",
+                    "type": "Jumping Claw Smash",
                     "description": ""
                 },
                 {
-                    "type": "Dive",
+                    "type": "Beak Smash",
                     "description": ""
                 },
                 {
-                    "type": "Gust",
+                    "type": "Take Off",
                     "description": ""
                 },
                 {
-                    "type": "Talon Lunge",
+                    "type": "Tail Lash",
                     "description": ""
                 },
                 {
-                    "type": "Peck",
+                    "type": "Thunder Rush",
+                    "description": ""
+                },
+                {
+                    "type": "Screech Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Hurricane Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Thunder Clash",
+                    "description": ""
+                },
+                {
+                    "type": "Quick Land",
+                    "description": ""
+                },
+                {
+                    "type": "Shock Blast",
+                    "description": ""
+                },
+                {
+                    "type": "Shock Burst",
+                    "description": ""
+                },
+                {
+                    "type": "Thunder Bomb Run",
                     "description": ""
                 }
             ],
@@ -847,11 +1123,11 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
-            "class": "",
-            "size_weight": "",
-            "weakness": "Fire, Freeze, Tear",
-            "strength": "",
+            "main-image": "/src/assets/images/21.png",
+            "class": "Combat",
+            "size_weight": "Large/Heavyweight",
+            "weakness": "Fire(Tail Canister), Freeze (Chest Canister), Tear",
+            "strength": "Shock",
             "PS5-photo": ""
         },
         {
@@ -859,19 +1135,39 @@
             "name": "Deathbringer",
             "attacks": [
                 {
-                    "type": "Cannon Fire",
+                    "type": "Heavy Cannon Shot",
                     "description": ""
                 },
                 {
-                    "type": "Flamethrower",
+                    "type": "Repeater Cannon Burst",
                     "description": ""
                 },
                 {
-                    "type": "Grenade Launcher",
+                    "type": "Rocket Barrage",
                     "description": ""
                 },
                 {
-                    "type": "Swarm Launcher",
+                    "type": "Rocket Salvo",
+                    "description": ""
+                },
+                {
+                    "type": "Swarm Missile Burst",
+                    "description": ""
+                },
+                {
+                    "type": "Flamethrower Burst",
+                    "description": ""
+                },
+                {
+                    "type": "Grenade Launcher Shot",
+                    "description": ""
+                },
+                {
+                    "type": "Foot Stomp",
+                    "description": ""
+                },
+                {
+                    "type": "Gun Turret Burst",
                     "description": ""
                 }
             ],
@@ -897,49 +1193,33 @@
                     "description": ""
                 }
             ],
-            "main-image": "",
-            "class": "",
-            "size_weight": "",
-            "weakness": "Fire, Shock",
-            "strength": "",
+            "main-image": "/src/assets/images/22.png",
+            "class": "Combat",
+            "size_weight": "Large",
+            "weakness": "Fire, Shock, Tear",
+            "strength": "Corruption",
             "PS5-photo": ""
         },
         {
             "id": 23,
-            "name": "Tailneck",
+            "name": "Tallneck",
             "attacks": [
                 {
-                    "type": "",
-                    "description": ""
-                },
-                {
-                    "type": "",
-                    "description": ""
-                },
-                {
-                    "type": "",
+                    "type": "None",
                     "description": ""
                 }
             ],
             "vulnerabilities": [
                 {
-                    "type": "",
-                    "description": ""
-                },
-                {
-                    "type": "",
-                    "description": ""
-                },
-                {
-                    "type": "",
+                    "type": "None",
                     "description": ""
                 }
             ],
-            "main-image": "",
-            "class": "recon",
-            "size_weight": "Heavyweight",
-            "weakness": "",
-            "strength": "",
+            "main-image": "/src/assets/images/23.png",
+            "class": "Communications, Recon",
+            "size_weight": "Large/Heavyweight",
+            "weakness": "None",
+            "strength": "None",
             "PS5-photo": ""
         },
         {
@@ -949,35 +1229,19 @@
                 {
                     "type": "Please refer to each machine",
                     "description": ""
-                },
-                {
-                    "type": "",
-                    "description": ""
-                },
-                {
-                    "type": "",
-                    "description": ""
                 }
             ],
             "vulnerabilities": [
                 {
                     "type": "Please refer to each machine",
                     "description": ""
-                },
-                {
-                    "type": "",
-                    "description": ""
-                },
-                {
-                    "type": "",
-                    "description": ""
                 }
             ],
-            "main-image": "",
-            "class": "",
-            "size_weight": "",
-            "weakness": "",
-            "strength": "",
+            "main-image": "/src/assets/images/24.png",
+            "class": "Specific to each machine",
+            "size_weight": "Specific to each machine",
+            "weakness": "Specific to each machine",
+            "strength": "Corruption, machine with enhanced power",
             "PS5-photo": ""
         }
     ]
