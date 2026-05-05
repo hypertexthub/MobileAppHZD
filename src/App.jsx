@@ -11,36 +11,15 @@ ReactModal.setAppElement("#root")
 
 function App() {
 
-  const addVulnerability = (machineId, newVuln) => {
-    const [machines, setMachines] = useState([]);
-    const updatedMachines = machines.map(machine => {
-      if (machine.id === machineId) {
-        return {
-          ...machine,
-          vulnerabilities: [
-            ...machine.vulnerabilities,
-            newVuln
-          ]
-        };
-      } else {
-        return machine;
-      }
-    });
-
-    setMachines(updatedMachines);
-  };
-
-
   return (
 
     <div className=''>
       <Router>
         <Header />
         <Filters />
-
         <Routes>
           <Route path="/" element={<Allmachines />} />
-          {/* <Route path="/machine/:id" element={<Singlemachine machines={machines} onEdit={addVulnerability} />} /> */}
+          <Route path="/machine/:id" element={<Singlemachine />} />
         </Routes>
         <Footer />
       </Router>

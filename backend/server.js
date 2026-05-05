@@ -7,7 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -15,26 +14,31 @@ const db = mysql.createConnection({
     database: "hdz"
 });
 
-app.get("/machines", async (req, res) => {
-    try {
-        const [machines] = await db.promise().query("SELECT * FROM machines");
-        const [attacks] = await db.promise().query("SELECT * FROM attacks");
-        const [vulns] = await db.promise().query("SELECT * FROM vulnerabilities");
+//rendering all machines
 
+app.get("/machines", (req, res) => {
+    const q = "SELECT * FROM machines";
 
-        const result = machines.map(m => ({
-            ...m,
-            id: Number(m.id),
-            attacks: attacks.filter(a => Number(a.machine_id) === Number(m.id)),
-            vulnerabilities: vulns.filter(v => Number(v.machine_id) === Number(m.id))
-        }));
-
-        res.json(result);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: "Server error" });
-    }
+    db.query(q, (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.json(data);
+    });
 });
+
+//rendering single machine
+
+app.get("/machines/:id", (req, res) => {
+    const id = req.params.id;
+
+    const q = "SELECT * FROM machines WHERE id = ?";
+
+    db.query(q, [id], (err, data) => {
+        if (err) return res.status(500).json(err);
+
+        return res.json(data[0]);
+    });
+});
+
 
 app.listen(5001, () => {
     console.log("Server running on port 5001");

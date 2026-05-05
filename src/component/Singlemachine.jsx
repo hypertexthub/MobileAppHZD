@@ -3,18 +3,26 @@ import Button from './Button'
 import { useNavigate } from "react-router-dom";
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import MyModal from "./Modal";
 
 const Singlemachine = ({ machines, onEdit }) => {
 
-    const { id } = useParams();
-    const machine = machines.find((m) => m.id === Number(id));
-    const navigate = useNavigate();
-
     const [isOpen, setIsOpen] = useState(false);
 
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const [machine, setMachine] = useState(null);
+
+    useEffect(() => {
+        fetch(`http://localhost:5001/machines/${id}`)
+            .then(res => res.json())
+            .then(data => setMachine(data))
+            .catch(err => console.error(err));
+    }, [id]);
+
+    if (!machine) return <p>Loading...</p>;
 
     return (
         <div className="">
@@ -25,7 +33,7 @@ const Singlemachine = ({ machines, onEdit }) => {
             <h2>{machine.name}</h2>
 
             <img
-                src={machine["main-image"]}
+                src={machine.main_image}
                 alt={machine.name}
                 className='mainimageSingle'
             />
@@ -64,14 +72,14 @@ const Singlemachine = ({ machines, onEdit }) => {
                             </div>
                         ))
                     ) : (
-                        <p>No attacks available</p>
+                        <p>No vulnerabilities available</p>
                     )}
 
                     <button className="buttonedit">
                         <FaEdit className="icons" onClick={() => setIsOpen(true)}
                         />
                     </button>
-                    <MyModal isOpen={isOpen} onClose={() => setIsOpen(false)} onEdit={(newVuln) => onEdit(machine.id, newVuln)} />
+                    <MyModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
                 </div>
 
             </div>

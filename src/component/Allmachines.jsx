@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const Allmachines = () => {
     const navigate = useNavigate();
     const [machines, setMachines] = useState([]);
+
     useEffect(() => {
         fetch("http://localhost:5001/machines")
             .then(res => res.json())

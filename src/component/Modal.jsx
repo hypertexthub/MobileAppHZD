@@ -4,13 +4,7 @@ import { useState } from "react";
 
 const MyModal = ({ isOpen, onClose, onEdit }) => {
     const [value, setValue] = useState("");
-    const handleSave = () => {
-        onEdit({
-            type: value,
-            description: ""
-        });
-        onClose();
-    };
+
 
     return (
         <ReactModal isOpen={isOpen} onRequestClose={onClose}>
@@ -22,7 +16,7 @@ const MyModal = ({ isOpen, onClose, onEdit }) => {
                 />
                 <div>
                     <button onClick={onClose}>Close</button>
-                    <button onClick={handleSave}>Save</button>
+                    {/* <button onclick={handleSave} >Save</button> */}
                 </div>
 
             </div>
