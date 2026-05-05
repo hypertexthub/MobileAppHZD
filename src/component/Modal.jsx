@@ -5,6 +5,18 @@ import { useState } from "react";
 const MyModal = ({ isOpen, onClose, onEdit }) => {
     const [value, setValue] = useState("");
 
+    const handleSave = () => {
+        if (!value.trim()) return;
+
+        onEdit({
+            type: value,
+            description: ""
+        });
+
+        setValue("");
+        onClose();
+    };
+
 
     return (
         <ReactModal isOpen={isOpen} onRequestClose={onClose}>
@@ -16,7 +28,7 @@ const MyModal = ({ isOpen, onClose, onEdit }) => {
                 />
                 <div>
                     <button onClick={onClose}>Close</button>
-                    {/* <button onclick={handleSave} >Save</button> */}
+                    <button onClick={handleSave} >Save</button>
                 </div>
 
             </div>

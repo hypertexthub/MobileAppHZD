@@ -18,11 +18,32 @@ const Singlemachine = ({ machines, onEdit }) => {
     useEffect(() => {
         fetch(`http://localhost:5001/machines/${id}`)
             .then(res => res.json())
-            .then(data => setMachine(data))
-            .catch(err => console.error(err));
+            .then(data => setMachine(data));
+
+        fetch(`http://localhost:5001/machines/${id}/attacks`)
+            .then(res => res.json())
+            .then(data => setMachine(prev => ({ ...prev, attacks: data })));
+
+        fetch(`http://localhost:5001/machines/${id}/vulnerabilities`)
+            .then(res => res.json())
+            .then(data => setMachine(prev => ({ ...prev, vulnerabilities: data })));
     }, [id]);
 
     if (!machine) return <p>Loading...</p>;
+
+    //updating vulnerability
+
+    const handleAddVulnerability = (newVuln) => {
+        fetch(`http://localhost:5001/machines/${id}/vulnerabilities`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newVuln)
+        })
+            .then(() => window.location.reload())
+            .catch(err => console.error(err));
+    };
 
     return (
         <div className="">
@@ -79,7 +100,7 @@ const Singlemachine = ({ machines, onEdit }) => {
                         <FaEdit className="icons" onClick={() => setIsOpen(true)}
                         />
                     </button>
-                    <MyModal isOpen={isOpen} onClose={() => setIsOpen(false)} />
+                    <MyModal isOpen={isOpen} onClose={() => setIsOpen(false)} onEdit={handleAddVulnerability} />
                 </div>
 
             </div>
