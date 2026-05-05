@@ -2,13 +2,43 @@ import { useParams } from "react-router-dom";
 import Button from './Button'
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import Modal from "./Modal";
 import MyModal from "./Modal";
 import { FaPlus } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
 
+
 const Singlemachine = ({ machines, onEdit }) => {
+
+    const fileRef = useRef(null);
+    const handleFileChange = async (e) => {
+        const file = e.target.files[0];
+
+        if (!file) return;
+
+        if (!["image/jpeg", "image/png"].includes(file.type)) {
+            alert("Only JPG or PNG allowed");
+            return;
+        }
+
+        if (file.size > 999 * 1024) {
+            alert("File too large (max 1000KB)");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("image", file);
+        formData.append("category", "ps5");
+
+        await fetch(`http://localhost:5001/machines/${id}/images`, {
+            method: "POST",
+            body: formData
+        });
+    };
+
+
+
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -21,13 +51,6 @@ const Singlemachine = ({ machines, onEdit }) => {
             .then(res => res.json())
             .then(data => setMachine(data));
 
-        fetch(`http://localhost:5001/machines/${id}/attacks`)
-            .then(res => res.json())
-            .then(data => setMachine(prev => ({ ...prev, attacks: data })));
-
-        fetch(`http://localhost:5001/machines/${id}/vulnerabilities`)
-            .then(res => res.json())
-            .then(data => setMachine(prev => ({ ...prev, vulnerabilities: data })));
     }, [id]);
 
     if (!machine) return <p>Loading...</p>;
@@ -47,17 +70,17 @@ const Singlemachine = ({ machines, onEdit }) => {
     };
 
     //deleting vunerability
+
     const handleDeleteVulnerability = (vulnId) => {
-        fetch(`http://localhost:5001/vulnerabilities/${vulnId}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                machine_id: machine.id
-            })
+        fetch(`http://localhost:5001/machines/${machine.id}/vulnerabilities/${vulnId}`, {
+            method: "DELETE"
         })
-            .then(() => window.location.reload())
+            .then(() => {
+                setMachine(prev => ({
+                    ...prev,
+                    vulnerabilities: prev.vulnerabilities.filter(v => v.id !== vulnId)
+                }));
+            })
             .catch(err => console.error(err));
     };
 
@@ -129,7 +152,37 @@ const Singlemachine = ({ machines, onEdit }) => {
             </div>
 
             <div>
-                <h4>Upload your PS5 Images:</h4>
+                <h4>Upload your PS5 Images</h4>
+
+                <button className="buttonedit" onClick={() => fileRef.current.click()}>
+                    <FaPlus className="icons" />
+                </button>
+
+                <input
+                    type="file"
+                    ref={fileRef}
+                    hidden
+                    accept="image/png, image/jpeg"
+                    onChange={handleFileChange}
+                />
+            </div>
+
+
+
+            <div className="imagesMachine">
+
+                {machine.images && machine.images.length > 0 ? (
+                    machine.images.map((img) => (
+                        <div key={img.id} className="imagesMachine">
+                            <img className="secondaryimg"
+                                src={img.image_url}
+                                alt="machine"
+                            />
+                        </div>
+                    ))
+                ) : (
+                    <p>No images available</p>
+                )}
             </div>
         </div>
     )

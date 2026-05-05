@@ -217,3 +217,16 @@ code {
   max-width: 170px;
   flex-wrap: wrap;
 }
+
+.imagesMachine {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.secondaryimg {
+  width: 300px;
+  border-radius: 5px;
+
+}
