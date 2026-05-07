@@ -10,13 +10,13 @@ import Login from './component/Login'
 import Createuser from "./component/Createuser"
 import Nav from "./component/Nav"
 import ReactModal from "react-modal"
-
-
+import Protectedroute from "./component/Protectedroute";
 
 ReactModal.setAppElement("#root")
 
 function App() {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const fetchUser = async () => {
     try {
@@ -34,12 +34,18 @@ function App() {
     } catch (err) {
       setUser(null);
     }
+    finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchUser();
   }, []);
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
 
@@ -52,8 +58,22 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login fetchUser={fetchUser} />} />
           <Route path="/register" element={<Createuser />} />
-          <Route path="/" element={<Allmachines />} />
-          <Route path="/machine/:id" element={<Singlemachine />} />
+          <Route
+            path="/"
+            element={
+              <Protectedroute user={user}>
+                <Allmachines />
+              </Protectedroute>
+            }
+          />
+          <Route
+            path="/machine/:id"
+            element={
+              <Protectedroute user={user}>
+                <Singlemachine />
+              </Protectedroute>
+            }
+          />
         </Routes>
         <Footer />
       </Router>

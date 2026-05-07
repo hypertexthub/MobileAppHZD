@@ -285,7 +285,7 @@ const upload = multer({
 
 //rendering all machines
 
-app.get("/machines", (req, res) => {
+app.get("/machines", authMiddleware, (req, res) => {
     const q = "SELECT * FROM machines";
 
     db.query(q, (err, data) => {
@@ -296,7 +296,7 @@ app.get("/machines", (req, res) => {
 
 //rendering single machine
 
-app.get("/machines/:id", (req, res) => {
+app.get("/machines/:id", authMiddleware, (req, res) => {
     const id = req.params.id;
 
     const machineQuery = "SELECT * FROM machines WHERE id = ?";
@@ -336,7 +336,7 @@ app.listen(5001, () => {
 
 //add vulnerability
 
-app.post("/machines/:id/vulnerabilities", (req, res) => {
+app.post("/machines/:id/vulnerabilities", authMiddleware, (req, res) => {
     const machineId = req.params.id;
     const { type, description } = req.body;
 
@@ -368,7 +368,7 @@ app.post("/machines/:id/vulnerabilities", (req, res) => {
 //     });
 // });
 
-app.delete("/machines/:machineId/vulnerabilities/:id", (req, res) => {
+app.delete("/machines/:machineId/vulnerabilities/:id", authMiddleware, (req, res) => {
     const { machineId, id } = req.params;
 
     const q = `
@@ -386,7 +386,7 @@ app.delete("/machines/:machineId/vulnerabilities/:id", (req, res) => {
 //uploading image
 
 
-app.post("/machines/:id/images", upload.single("image"), (req, res) => {
+app.post("/machines/:id/images", authMiddleware, upload.single("image"), (req, res) => {
     const machineId = req.params.id;
     const file = req.file;
     const category = req.body.category;
