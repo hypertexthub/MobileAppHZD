@@ -2,17 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login({ fetchUser }) {
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    const isValidEmail = (email) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
 
     const login = async () => {
-
-        const isValidEmail = (email) => {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-        };
-
-
         if (!email || !password) {
             alert("Please fill all fields");
             return;
@@ -23,23 +20,25 @@ function Login({ fetchUser }) {
             return;
         }
 
-        await fetch("http://localhost:5001/login", {
+        const res = await fetch("http://localhost:5001/login", {
             method: "POST",
             credentials: "include",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
         });
 
+        if (!res.ok) {
+            alert("Invalid email or password");
+            return;
+        }
+
         await fetchUser();
         navigate("/");
     };
 
-    const navigate = useNavigate();
     const goToRegister = () => {
         navigate("/register");
     };
-
-
 
     return (
         <div>
