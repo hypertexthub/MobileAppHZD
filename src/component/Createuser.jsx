@@ -55,27 +55,33 @@ function CreateUser() {
     };
 
     return (
-        <div>
+        <div className="containerinput">
 
-            <h1>Create Account</h1>
+            <h2>Create Account</h2>
 
-            <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
+            <div className="">
+                <input
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
 
-            <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
+                <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
 
-            <button onClick={register}>
-                Create Account
-            </button>
+                <div>
+                    <button className='bouton' onClick={register}>
+                        Save
+                    </button>
+                </div>
+
+
+            </div>
 
         </div>
     );

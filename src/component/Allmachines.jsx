@@ -1,12 +1,14 @@
 import Button from './Button'
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
 
 
 
 const Allmachines = () => {
     const navigate = useNavigate();
     const [machines, setMachines] = useState([]);
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:5001/machines", {
@@ -20,6 +22,53 @@ const Allmachines = () => {
             .catch(err => console.error(err));
     }, []);
 
+
+    // GET FAVORITES (to know which are starred)
+    useEffect(() => {
+        fetch("http://localhost:5001/favorites", {
+            credentials: "include"
+        })
+            .then(async (res) => {
+                if (!res.ok) return [];
+                return res.json();
+            })
+            .then(data => setFavorites(data))
+            .catch(err => console.error(err));
+    }, []);
+
+    const isFavorite = (id) => {
+        return favorites.some(fav => fav.id === id);
+    };
+
+    const toggleFavorite = async (machineId) => {
+        const exists = isFavorite(machineId);
+
+        if (exists) {
+            await fetch(
+                `http://localhost:5001/favorites/${machineId}`,
+                {
+                    method: "DELETE",
+                    credentials: "include"
+                }
+            );
+
+            setFavorites(prev =>
+                prev.filter(f => f.id !== machineId)
+            );
+        } else {
+            await fetch(
+                `http://localhost:5001/favorites/${machineId}`,
+                {
+                    method: "POST",
+                    credentials: "include"
+                }
+            );
+
+            const machine = machines.find(m => m.id === Number(machineId));
+            setFavorites(prev => [...prev, machine]);
+        }
+    };
+
     return (
 
         <div className="containerAllmachines">
@@ -27,6 +76,9 @@ const Allmachines = () => {
                 {(Array.isArray(machines) ? machines : []).map((machine) => (
                     <div className="flexcolumn" key={machine.id}>
                         <h3>{machine.name}</h3>
+                        <FaStar
+                            onClick={() => toggleFavorite(machine.id)}
+                        />
 
                         <img
                             src={machine.main_image || "no image"}

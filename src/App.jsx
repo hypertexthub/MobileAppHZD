@@ -11,6 +11,7 @@ import Createuser from "./component/Createuser"
 import Nav from "./component/Nav"
 import ReactModal from "react-modal"
 import Protectedroute from "./component/Protectedroute";
+import Favorites from './component/Favorites'
 
 ReactModal.setAppElement("#root")
 
@@ -74,6 +75,15 @@ function App() {
               </Protectedroute>
             }
           />
+          <Route
+            path="/favorites"
+            element={
+              <Protectedroute user={user}>
+                <Favorites />
+              </Protectedroute>
+            }
+          />
+
         </Routes>
         <Footer />
       </Router>

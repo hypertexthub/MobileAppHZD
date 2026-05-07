@@ -443,4 +443,58 @@ app.delete("/machines/:machineId/images/:imageId", authMiddleware, (req, res) =>
 });
 
 
+//get user's favorites
+app.get("/favorites", authMiddleware, (req, res) => {
+    const userId = req.user.id;
 
+    const sql = `
+    SELECT 
+        m.id,
+        m.name,
+        m.main_image,
+        m.class,
+        m.size_weight,
+        m.weakness
+    FROM favorites f
+    JOIN machines m ON f.machine_id = m.id
+    WHERE f.user_id = ?
+`;
+
+    db.query(sql, [userId], (err, results) => {
+        if (err) return res.status(500).json(err);
+        res.json(results);
+    });
+});
+
+//add a favorites
+app.post("/favorites/:machineId", authMiddleware, (req, res) => {
+    const userId = req.user.id;
+    const machineId = req.params.machineId;
+
+    const sql = `
+        INSERT INTO favorites (user_id, machine_id)
+        VALUES (?, ?)
+    `;
+
+    db.query(sql, [userId, machineId], (err) => {
+        if (err) return res.status(500).json(err);
+
+        res.json({ message: "Added to favorites" });
+    });
+});
+
+app.delete("/favorites/:machineId", authMiddleware, (req, res) => {
+    const userId = req.user.id;
+    const machineId = req.params.machineId;
+
+    const sql = `
+        DELETE FROM favorites
+        WHERE user_id = ? AND machine_id = ?
+    `;
+
+    db.query(sql, [userId, machineId], (err) => {
+        if (err) return res.status(500).json(err);
+
+        res.json({ message: "Removed from favorites" });
+    });
+});

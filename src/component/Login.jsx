@@ -41,24 +41,34 @@ function Login({ fetchUser }) {
     };
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="containerinput">
+            <h2>Login</h2>
 
-            <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Email"
-            />
+            <div className="">
 
-            <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password"
-                type="password"
-            />
+                <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                />
 
-            <button onClick={login}>Login</button>
-            <button onClick={goToRegister}>Create Account</button>
+                <input
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    type="password"
+                />
+
+                <div>
+                    <button className='bouton' onClick={login}>Login</button>
+                </div>
+
+            </div>
+
+            <div>
+                <button className='bouton' onClick={goToRegister}>Create Account</button>
+            </div>
+
         </div>
     );
 }

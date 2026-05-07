@@ -27,6 +27,11 @@ const Nav = ({ setUser }) => {
             />
 
             <Button
+                text="Favorites"
+                onClick={() => navigate(`/favorites`)}
+            />
+
+            <Button
                 text="Logout"
                 onClick={handleLogout}
             />

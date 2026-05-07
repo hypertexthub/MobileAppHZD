@@ -140,6 +140,9 @@ code {
   padding: 10px;
 }
 
+input {
+  width: 250px;
+}
 
 
 .flexrow {
@@ -265,4 +268,11 @@ code {
 
 .textalign {
   text-align: center;
+}
+
+.containerinput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
