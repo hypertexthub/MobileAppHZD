@@ -26,14 +26,40 @@ const Singlemachine = ({ machines, onEdit }) => {
             return;
         }
 
-        const formData = new FormData();
-        formData.append("image", file);
-        formData.append("category", "ps5");
+        try {
 
-        await fetch(`http://localhost:5001/machines/${id}/images`, {
-            method: "POST",
-            body: formData
-        });
+            const formData = new FormData();
+            formData.append("image", file);
+            formData.append("category", "ps5");
+
+            const res = await fetch(
+                `http://localhost:5001/machines/${id}/images`,
+                {
+                    method: "POST",
+                    body: formData,
+                    credentials: "include"
+                }
+            );
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data?.error || "Upload failed");
+            }
+
+            if (!data?.image) {
+                throw new Error("Invalid server response");
+            }
+
+            setMachine(prev => ({
+                ...prev,
+                images: [...(prev?.images || []), data.image]
+            }));
+
+        } catch (err) {
+            console.error(err);
+            alert("Image upload failed");
+        }
     };
 
 
@@ -46,9 +72,15 @@ const Singlemachine = ({ machines, onEdit }) => {
     const [machine, setMachine] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5001/machines/${id}`)
-            .then(res => res.json())
-            .then(data => setMachine(data));
+        fetch(`http://localhost:5001/machines/${id}`, {
+            credentials: "include"
+        })
+            .then(res => {
+                if (!res.ok) throw new Error("Failed to fetch machine");
+                return res.json();
+            })
+            .then(data => setMachine(data))
+            .catch(err => console.error(err));
 
     }, [id]);
 
@@ -58,6 +90,7 @@ const Singlemachine = ({ machines, onEdit }) => {
 
     const handleAddVulnerability = (newVuln) => {
         fetch(`http://localhost:5001/machines/${id}/vulnerabilities`, {
+            credentials: "include",
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -72,6 +105,7 @@ const Singlemachine = ({ machines, onEdit }) => {
 
     const handleDeleteVulnerability = (vulnId) => {
         fetch(`http://localhost:5001/machines/${machine.id}/vulnerabilities/${vulnId}`, {
+            credentials: "include",
             method: "DELETE"
         })
             .then(() => {
@@ -82,6 +116,26 @@ const Singlemachine = ({ machines, onEdit }) => {
             })
             .catch(err => console.error(err));
     };
+
+    const handleDeleteImage = async (imageId) => {
+        const res = await fetch(
+            `http://localhost:5001/machines/${id}/images/${imageId}`,
+            {
+                credentials: "include",
+                method: "DELETE"
+
+            }
+        );
+
+        if (!res.ok) return;
+
+        setMachine(prev => ({
+            ...prev,
+            images: prev.images.filter(img => img.id !== imageId)
+        }));
+    };
+
+
 
     return (
         <div className="">
@@ -175,6 +229,11 @@ const Singlemachine = ({ machines, onEdit }) => {
                                     src={img.image_url}
                                     alt="machine"
                                 />
+                                <button className="buttonedit" onClick={() => handleDeleteImage(img.id)}>
+                                    <FaTrash className="icons" />
+                                </button>
+
+
                             </div>
                         ))
                     ) : (

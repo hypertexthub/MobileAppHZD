@@ -9,12 +9,16 @@ const Allmachines = () => {
     const [machines, setMachines] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5001/machines")
-            .then(res => res.json())
+        fetch("http://localhost:5001/machines", {
+            credentials: "include"
+        })
+            .then(res => {
+                if (!res.ok) throw new Error("Failed to fetch machines");
+                return res.json();
+            })
             .then(data => setMachines(data))
             .catch(err => console.error(err));
     }, []);
-
 
     return (
 

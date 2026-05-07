@@ -254,33 +254,6 @@ app.post("/logout", (req, res) => {
 });
 
 
-//manage storage
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "uploads/");
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + path.extname(file.originalname));
-    }
-});
-
-const upload = multer({
-    storage,
-    limits: {
-        fileSize: 999 * 1024
-    },
-    fileFilter: (req, file, cb) => {
-        if (
-            file.mimetype === "image/jpeg" ||
-            file.mimetype === "image/png"
-        ) {
-            cb(null, true);
-        } else {
-            cb(new Error("Only JPG/PNG allowed"));
-        }
-    }
-});
 
 
 //rendering all machines
@@ -351,22 +324,7 @@ app.post("/machines/:id/vulnerabilities", authMiddleware, (req, res) => {
     });
 });
 
-//remove vulnerability
 
-// app.delete("/vulnerabilities/:id", (req, res) => {
-//     const id = req.params.id;
-//     const machineId = req.body.machine_id;
-
-//     const q = `
-//         DELETE FROM vulnerabilities 
-//         WHERE id = ? AND machine_id = ?
-//     `;
-
-//     db.query(q, [id, machineId], (err, data) => {
-//         if (err) return res.status(500).json(err);
-//         return res.json({ message: "Vulnerability deleted" });
-//     });
-// });
 
 app.delete("/machines/:machineId/vulnerabilities/:id", authMiddleware, (req, res) => {
     const { machineId, id } = req.params;
@@ -382,6 +340,32 @@ app.delete("/machines/:machineId/vulnerabilities/:id", authMiddleware, (req, res
     });
 });
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "uploads/");
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({
+    storage,
+    limits: {
+        fileSize: 999 * 1024
+    },
+    fileFilter: (req, file, cb) => {
+        if (
+            file.mimetype === "image/jpeg" ||
+            file.mimetype === "image/png"
+        ) {
+            cb(null, true);
+        } else {
+            cb(new Error("Only JPG/PNG allowed"));
+        }
+    }
+});
+
 
 //uploading image
 
@@ -390,19 +374,73 @@ app.post("/machines/:id/images", authMiddleware, upload.single("image"), (req, r
     const machineId = req.params.id;
     const file = req.file;
     const category = req.body.category;
+    const userId = req.user.id;
 
     if (!file) return res.status(400).json({ error: "No file uploaded" });
 
     const imageUrl = `http://localhost:5001/uploads/${file.filename}`;
 
     const q = `
-        INSERT INTO machine_images (machine_id, image_url, category)
-        VALUES (?, ?, ?)
+        INSERT INTO machine_images (machine_id, image_url, category, uploaded_by)
+        VALUES (?, ?, ?, ?)
     `;
 
-    db.query(q, [machineId, imageUrl, category], (err) => {
+    db.query(q, [machineId, imageUrl, category, userId], (err, result) => {
+        if (err) { return res.status(500).json(err); }
+
+        return res.json({
+            message: "Uploaded",
+            image: {
+                id: result.insertId,
+                image_url: imageUrl,
+                category,
+                uploaded_by: userId
+            }
+        });
+    });
+}
+);
+
+//deleting machine_image
+
+app.delete("/machines/:machineId/images/:imageId", authMiddleware, (req, res) => {
+    const { machineId, imageId } = req.params;
+    const userId = req.user.id;
+
+    const findQuery = `
+        SELECT * FROM machine_images
+        WHERE id = ? AND machine_id = ?
+    `;
+
+    db.query(findQuery, [imageId, machineId], (err, results) => {
         if (err) return res.status(500).json(err);
-        return res.json({ message: "Uploaded" });
+
+        if (results.length === 0) {
+            return res.status(404).json({ message: "Image not found" });
+        }
+
+        const image = results[0];
+
+
+        if (Number(image.uploaded_by !== userId)) {
+            return res.status(403).json({ message: "Not allowed to delete this image" });
+        }
+
+        const deleteQuery = `
+            DELETE FROM machine_images
+            WHERE id = ? AND machine_id = ?
+        `;
+
+        db.query(deleteQuery, [imageId, machineId], (err2) => {
+            if (err2) return res.status(500).json(err2);
+
+            return res.json({
+                message: "Image deleted",
+                id: imageId
+            });
+        });
     });
 });
+
+
 

@@ -51,10 +51,10 @@ function App() {
 
     <div className=''>
       <Router>
-        <Header />
-        {user && <Nav setUser={setUser} />}
 
-        <Filters />
+        {user && <Header setUser={setUser} />}
+        {user && <Nav setUser={setUser} />}
+        {user && <Filters setUser={setUser} />}
         <Routes>
           <Route path="/login" element={<Login fetchUser={fetchUser} />} />
           <Route path="/register" element={<Createuser />} />
