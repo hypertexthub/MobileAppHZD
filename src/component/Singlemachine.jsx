@@ -86,9 +86,6 @@ const Singlemachine = ({ machines, onEdit }) => {
     return (
         <div className="">
 
-            <div>
-                <Button text="All machines" color="" onClick={() => navigate(`/`)} />
-            </div>
             <h2>{machine.name}</h2>
 
             <img

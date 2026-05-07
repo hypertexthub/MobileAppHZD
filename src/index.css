@@ -104,6 +104,10 @@ p {
   font-size: 14px;
 }
 
+.navigation {
+  background-color: antiquewhite;
+}
+
 code,
 .counter {
   font-family: var(--mono);

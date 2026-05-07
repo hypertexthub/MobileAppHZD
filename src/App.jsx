@@ -9,6 +9,7 @@ import Footer from './component/Footer'
 import Login from './component/Login'
 import Createuser from "./component/Createuser"
 import ReactModal from "react-modal"
+import Nav from "./component/Nav"
 
 ReactModal.setAppElement("#root")
 
@@ -19,6 +20,8 @@ function App() {
     <div className=''>
       <Router>
         <Header />
+        <Nav />
+
         <Filters />
         <Routes>
           <Route path="/login" element={<Login />} />
