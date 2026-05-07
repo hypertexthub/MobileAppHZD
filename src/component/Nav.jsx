@@ -1,7 +1,7 @@
 import Button from './Button'
 import { useNavigate } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ setUser }) => {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -11,6 +11,7 @@ const Nav = () => {
                 credentials: "include",
             });
 
+            setUser(null);
             navigate("/login");
             console.log('Success...Logged out');
         } catch (err) {
