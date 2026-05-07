@@ -146,6 +146,7 @@ code {
 
 }
 
+
 .flexrregular {
   display: flex;
   flex-direction: row;
@@ -172,7 +173,7 @@ code {
 }
 
 .mainimage {
-  width: 150px;
+  width: 200px;
   border-radius: 5px;
 }
 
@@ -226,7 +227,38 @@ code {
 }
 
 .secondaryimg {
-  width: 300px;
+  max-width: 100%;
   border-radius: 5px;
 
+}
+
+.containerImages {
+  border: solid 2px #9ca3af;
+  padding: 20px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.containerAllmachines {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+.bouton {
+  padding: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #9ca3af;
+  color: white;
+  text-align: center;
+  border: 0;
+  width: fit-content;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.textalign {
+  text-align: center;
 }

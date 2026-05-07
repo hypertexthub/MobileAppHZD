@@ -2,6 +2,8 @@ import Button from './Button'
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
+
 const Allmachines = () => {
     const navigate = useNavigate();
     const [machines, setMachines] = useState([]);
@@ -15,26 +17,37 @@ const Allmachines = () => {
 
 
     return (
-        <div className="flexrow">
-            {(Array.isArray(machines) ? machines : []).map((machine) => (
-                <div className="flexcolumn" key={machine.id}>
-                    <h3>{machine.name}</h3>
 
-                    <img
-                        src={machine.main_image || "no image"}
-                        alt={machine.name}
-                        className='mainimage'
-                    />
+        <div className="containerAllmachines">
+            <div className="flexrow">
+                {(Array.isArray(machines) ? machines : []).map((machine) => (
+                    <div className="flexcolumn" key={machine.id}>
+                        <h3>{machine.name}</h3>
 
-                    <Button
-                        text="View"
-                        color=""
-                        onClick={() => navigate(`/machine/${machine.id}`)}
-                    />
-                </div>
-            ))}
+                        <img
+                            src={machine.main_image || "no image"}
+                            alt={machine.name}
+                            className='mainimage'
+                        />
+
+                        <div className='textalign'>
+
+                            <Button
+                                className='bouton'
+                                text="View"
+                                onClick={() => navigate(`/machine/${machine.id}`)}
+                            />
+                        </div>
+
+
+                    </div>
+                ))}
+            </div>
+
         </div>
     );
 };
+
+
 
 export default Allmachines;

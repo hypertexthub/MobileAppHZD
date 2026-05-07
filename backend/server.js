@@ -3,11 +3,20 @@ import cors from "cors";
 import mysql from "mysql2";
 import multer from "multer";
 import path from "path";
+import bcrypt from "bcrypt";
+import cookieParser from "cookie-parser";
+import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
+
 app.use(express.json());
+app.use(cookieParser());
+
 app.use("/uploads", express.static("uploads"));
 
 const db = mysql.createConnection({
@@ -16,6 +25,231 @@ const db = mysql.createConnection({
     password: "",
     database: "hdz"
 });
+
+db.connect((err) => {
+    if (err) {
+        console.log("Database error:", err);
+    } else {
+        console.log("MySQL connected");
+    }
+});
+
+//register
+
+app.post("/register", async (req, res) => {
+
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+        return res.status(400).json({
+            message: "Email and password required"
+        });
+    }
+
+    try {
+        const passwordHash = await bcrypt.hash(password, 10);
+
+        const sql = `
+            INSERT INTO users (email, password_hash)
+            VALUES (?, ?)
+        `;
+
+        db.query(sql, [email, passwordHash], (err, result) => {
+
+            if (err) {
+                console.log(err);
+
+                return res.status(500).json({
+                    message: "Creating user failed"
+                });
+            }
+
+            res.json({
+                message: "User created"
+            });
+
+        });
+
+    } catch (err) {
+
+        res.status(500).json({
+            message: "Server error"
+        });
+    }
+});
+
+app.post("/login", (req, res) => {
+
+    const { email, password } = req.body;
+
+    const sql = `
+        SELECT * FROM users
+        WHERE email = ?
+    `;
+
+    db.query(sql, [email], async (err, results) => {
+
+        if (err) {
+            return res.status(500).json({
+                message: "Server error"
+            });
+        }
+
+        if (results.length === 0) {
+            return res.status(401).json({
+                message: "Invalid credentials"
+            });
+        }
+
+        const user = results[0];
+
+        // VERIFY PASSWORD
+        const validPassword = await bcrypt.compare(
+            password,
+            user.password_hash
+        );
+
+        if (!validPassword) {
+            return res.status(401).json({
+                message: "Invalid credentials"
+            });
+        }
+
+        // CREATE TOKEN
+        const token = uuidv4();
+
+        // EXPIRE IN 7 DAYS
+        const expiresAt = new Date(
+            Date.now() + 7 * 24 * 60 * 60 * 1000
+        );
+
+        // SAVE SESSION
+        const sessionSql = `
+            INSERT INTO sessions (
+                user_id,
+                token,
+                expires_at
+            )
+            VALUES (?, ?, ?)
+        `;
+
+        db.query(
+            sessionSql,
+            [user.id, token, expiresAt],
+            (err) => {
+
+                if (err) {
+                    return res.status(500).json({
+                        message: "Session error"
+                    });
+                }
+
+                // SEND COOKIE
+                res.cookie("session_token", token, {
+                    httpOnly: true,
+                    secure: false, // true in production
+                    sameSite: "lax",
+                    expires: expiresAt
+                });
+
+                res.json({
+                    message: "Logged in"
+                });
+
+            }
+        );
+
+    });
+
+});
+
+const authMiddleware = (req, res, next) => {
+
+    const token = req.cookies.session_token;
+
+    if (!token) {
+        return res.status(401).json({
+            message: "Unauthorized"
+        });
+    }
+
+    const sql = `
+        SELECT sessions.*, users.email
+        FROM sessions
+        JOIN users
+        ON users.id = sessions.user_id
+        WHERE token = ?
+        AND expires_at > NOW()
+    `;
+
+    db.query(sql, [token], (err, results) => {
+
+        if (err) {
+            return res.status(500).json({
+                message: "Server error"
+            });
+        }
+
+        if (results.length === 0) {
+            return res.status(401).json({
+                message: "Invalid session"
+            });
+        }
+
+        req.user = {
+            id: results[0].user_id,
+            email: results[0].email
+        };
+
+        next();
+
+    });
+
+};
+
+//route login
+app.get("/profile", authMiddleware, (req, res) => {
+
+    res.json({
+        user: req.user
+    });
+
+});
+
+//logout
+app.post("/logout", (req, res) => {
+
+    const token = req.cookies.session_token;
+
+    if (!token) {
+        return res.json({
+            message: "Already logged out"
+        });
+    }
+
+    const sql = `
+        DELETE FROM sessions
+        WHERE token = ?
+    `;
+
+    db.query(sql, [token], (err) => {
+
+        if (err) {
+            return res.status(500).json({
+                message: "Logout error"
+            });
+        }
+
+        res.clearCookie("session_token");
+
+        res.json({
+            message: "Logged out"
+        });
+
+    });
+
+});
+
 
 //manage storage
 

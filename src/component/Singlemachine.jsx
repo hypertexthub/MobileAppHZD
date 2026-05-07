@@ -1,15 +1,14 @@
 import { useParams } from "react-router-dom";
 import Button from './Button'
 import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
 import { useRef, useState, useEffect } from "react";
-import Modal from "./Modal";
 import MyModal from "./Modal";
 import { FaPlus } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
 
 
 const Singlemachine = ({ machines, onEdit }) => {
+
 
     const fileRef = useRef(null);
     const handleFileChange = async (e) => {
@@ -145,7 +144,6 @@ const Singlemachine = ({ machines, onEdit }) => {
 
                         )}
 
-
                     </div>
                 </div>
 
@@ -167,22 +165,26 @@ const Singlemachine = ({ machines, onEdit }) => {
                 />
             </div>
 
+            <div className="containerImages">
 
 
-            <div className="imagesMachine">
 
-                {machine.images && machine.images.length > 0 ? (
-                    machine.images.map((img) => (
-                        <div key={img.id} className="imagesMachine">
-                            <img className="secondaryimg"
-                                src={img.image_url}
-                                alt="machine"
-                            />
-                        </div>
-                    ))
-                ) : (
-                    <p>No images available</p>
-                )}
+                <div className="imagesMachine">
+
+                    {machine.images && machine.images.length > 0 ? (
+                        machine.images.map((img) => (
+                            <div key={img.id} className="imagesMachine">
+                                <img className="secondaryimg"
+                                    src={img.image_url}
+                                    alt="machine"
+                                />
+                            </div>
+                        ))
+                    ) : (
+                        <p>No images available</p>
+                    )}
+                </div>
+
             </div>
         </div>
     )
