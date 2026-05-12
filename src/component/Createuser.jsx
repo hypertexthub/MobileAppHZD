@@ -7,8 +7,6 @@ function CreateUser() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-
-
     const register = async () => {
 
         const isValidEmail = (email) => {
@@ -56,10 +54,8 @@ function CreateUser() {
 
     return (
         <div className="containerinput">
-
-            <h2>Create Account</h2>
-
-            <div className="">
+            <h1>Create Account</h1>
+            <div className="flexcolumn">
                 <input
                     type="email"
                     placeholder="Email"

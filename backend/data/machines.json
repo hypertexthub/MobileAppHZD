@@ -31,7 +31,7 @@
                     "description": "Override Codes"
                 }
             ],
-            "main-image": "/src/assets/images/1.png",
+            "main-image": "/src/assets/images/1.svg",
             "class": "Recon",
             "size_weight": "Small",
             "weakness": "Eye",
@@ -73,7 +73,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/2.png",
+            "main-image": "/src/assets/images/2.svg",
             "class": "Acquisition",
             "size_weight": "Small",
             "weakness": "Fire, Tear",
@@ -119,7 +119,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/3.png",
+            "main-image": "/src/assets/images/3.svg",
             "class": "Acquisition",
             "size_weight": "Small",
             "weakness": "Fire, Tear",
@@ -165,7 +165,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/4.png",
+            "main-image": "/src/assets/images/4.svg",
             "class": "Acquisition",
             "size_weight": "Small",
             "weakness": "Shock, Tear",
@@ -211,7 +211,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/5.png",
+            "main-image": "/src/assets/images/5.svg",
             "class": "Acquisition",
             "size_weight": "Small",
             "weakness": "Fire, Tear",
@@ -265,7 +265,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/6.png",
+            "main-image": "/src/assets/images/6.svg",
             "class": "Acquisition",
             "size_weight": "Small",
             "weakness": "Tear, Freeze",
@@ -311,7 +311,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/7.png",
+            "main-image": "/src/assets/images/7.svg",
             "class": "Recon",
             "size_weight": "Small",
             "weakness": " Shock, Tear",
@@ -365,7 +365,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/8.png",
+            "main-image": "/src/assets/images/8.svg",
             "class": "Acquisition",
             "size_weight": "Medium",
             "weakness": "Shock, Tear, Freeze",
@@ -403,7 +403,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/9.png",
+            "main-image": "/src/assets/images/9.svg",
             "class": "Combat",
             "size_weight": "Medium",
             "weakness": "Fire, Tear",
@@ -457,7 +457,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/10.png",
+            "main-image": "/src/assets/images/10.svg",
             "class": "Transport",
             "size_weight": "Medium",
             "weakness": "Tear",
@@ -515,7 +515,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/11.png",
+            "main-image": "/src/assets/images/11.svg",
             "class": "Transport",
             "size_weight": "Medium",
             "weakness": "Tear, Fire",
@@ -561,7 +561,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/12.png",
+            "main-image": "/src/assets/images/12.svg",
             "class": "Acquisition",
             "size_weight": "Small",
             "weakness": "Fire, Tear",
@@ -623,7 +623,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/13.png",
+            "main-image": "/src/assets/images/13.svg",
             "class": "Combat",
             "size_weight": "Small",
             "weakness": "Shock, Tear",
@@ -665,7 +665,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/14.png",
+            "main-image": "/src/assets/images/14.svg",
             "class": "Acquisition",
             "size_weight": "Lightweight",
             "weakness": "Fire, Tear",
@@ -719,7 +719,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/15.png",
+            "main-image": "/src/assets/images/15.svg",
             "class": "Combat",
             "size_weight": "Medium",
             "weakness": "Fire, Tear",
@@ -781,7 +781,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/16.png",
+            "main-image": "/src/assets/images/16.svg",
             "class": "Combat",
             "size_weight": "Medium",
             "weakness": "Fire, Tear, Shock(Power cell), Freeze (Canister)",
@@ -823,7 +823,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/17.png",
+            "main-image": "/src/assets/images/17.svg",
             "class": "Acquisition",
             "size_weight": "Medium/Midweight",
             "weakness": "Fire, Tear",
@@ -885,7 +885,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/18.png",
+            "main-image": "/src/assets/images/18.svg",
             "class": "Acquisition",
             "size_weight": "Heavyweight",
             "weakness": "Freeze, Tear",
@@ -939,7 +939,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/19.png",
+            "main-image": "/src/assets/images/19.svg",
             "class": "Transport",
             "size_weight": "Heavyweight",
             "weakness": "Freeze, Tear, Shock(Power Cell)",
@@ -1041,7 +1041,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/20.png",
+            "main-image": "/src/assets/images/20.svg",
             "class": "Combat",
             "size_weight": "Heavyweight",
             "weakness": "Fire(Leg Canister), Freeze (knee Canister), Tear, Shock(Power Cell)",
@@ -1123,7 +1123,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/21.png",
+            "main-image": "/src/assets/images/21.svg",
             "class": "Combat",
             "size_weight": "Large/Heavyweight",
             "weakness": "Fire(Tail Canister), Freeze (Chest Canister), Tear",
@@ -1193,7 +1193,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/22.png",
+            "main-image": "/src/assets/images/22.svg",
             "class": "Combat",
             "size_weight": "Large",
             "weakness": "Fire, Shock, Tear",
@@ -1215,7 +1215,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/23.png",
+            "main-image": "/src/assets/images/23.svg",
             "class": "Communications, Recon",
             "size_weight": "Large/Heavyweight",
             "weakness": "None",
@@ -1237,7 +1237,7 @@
                     "description": ""
                 }
             ],
-            "main-image": "/src/assets/images/24.png",
+            "main-image": "/src/assets/images/24.svg",
             "class": "Specific to each machine",
             "size_weight": "Specific to each machine",
             "weakness": "Specific to each machine",

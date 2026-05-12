@@ -1,29 +1,39 @@
 import Button from './Button'
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaRegStar } from "react-icons/fa";
 
-
-
-const Allmachines = () => {
+const Allmachines = ({ search }) => {
     const navigate = useNavigate();
     const [machines, setMachines] = useState([]);
     const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5001/machines", {
-            credentials: "include"
-        })
-            .then(res => {
-                if (!res.ok) throw new Error("Failed to fetch machines");
-                return res.json();
-            })
-            .then(data => setMachines(data))
-            .catch(err => console.error(err));
-    }, []);
+        const fetchMachines = async () => {
+            try {
+                let url = "http://localhost:5001/machines";
+
+                // if search has text, use search endpoint
+                if (search && search.trim() !== "") {
+                    url = `http://localhost:5001/machines/search/${encodeURIComponent(search)}`;
+                }
+
+                const res = await fetch(url, {
+                    credentials: "include"
+                });
+                const data = await res.json();
+
+                setMachines(data);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+
+        fetchMachines();
+    }, [search]);
 
 
-    // GET FAVORITES (to know which are starred)
+    //mes favorites
     useEffect(() => {
         fetch("http://localhost:5001/favorites", {
             credentials: "include"
@@ -72,13 +82,25 @@ const Allmachines = () => {
     return (
 
         <div className="containerAllmachines">
+            <div className="containerfav">
+                <h3>All Units</h3>
+            </div>
             <div className="flexrow">
                 {(Array.isArray(machines) ? machines : []).map((machine) => (
-                    <div className="flexcolumn" key={machine.id}>
+                    <div className="flexcolumn allmachinescard" key={machine.id}>
                         <h3>{machine.name}</h3>
-                        <FaStar
+
+                        <button
+                            className="favorite-btn"
                             onClick={() => toggleFavorite(machine.id)}
-                        />
+                        >
+                            {isFavorite(machine.id) ? (
+                                <FaStar className="star filled" />
+                            ) : (
+                                <FaRegStar className="star empty" />
+                            )}
+                        </button>
+
 
                         <img
                             src={machine.main_image || "no image"}
@@ -103,7 +125,5 @@ const Allmachines = () => {
         </div>
     );
 };
-
-
 
 export default Allmachines;

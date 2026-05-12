@@ -42,10 +42,9 @@ function Login({ fetchUser }) {
 
     return (
         <div className="containerinput">
-            <h2>Login</h2>
 
-            <div className="">
-
+            <div className="flexcolumn">
+                <div><h1>HZD mobile App</h1></div>
                 <input
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -62,6 +61,7 @@ function Login({ fetchUser }) {
                 <div>
                     <button className='bouton' onClick={login}>Login</button>
                 </div>
+
 
             </div>
 

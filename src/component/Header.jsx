@@ -1,4 +1,4 @@
-const Header = ({ title = 'Horizon Zero Dawn Machines' }) => {
+const Header = ({ title = '', search, setSearch }) => {
     const onClick = () => {
         console.log('click component header');
 
@@ -7,11 +7,16 @@ const Header = ({ title = 'Horizon Zero Dawn Machines' }) => {
     return (
         <header className="headertitle">
 
-            <div className="container">
-                <h3>{title}</h3>
+            <div className="headercontainer">
+                <h2>{title}</h2>
                 <div >
-                    <input className="inputstyle"></input>
-                    <button onClick={onClick}>Search</button>
+                    <input
+                        type="text"
+                        placeholder="Search machine..."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="search-input"
+                    />
                 </div>
             </div>
         </header>

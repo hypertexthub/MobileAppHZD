@@ -25,47 +25,58 @@ const Favorites = () => {
 
     }, []);
     return (
-        <div className="favorites-container">
-            <h2>My Favorites</h2>
 
-            {(Array.isArray(machines) ? machines : []).length === 0 ? (
-                <p>No favorites yet.</p>
-            ) : (
-                <div className="favorites-grid">
+        <div className="containerAllmachines">
+            <div className="containerfav">
+                <h3>My Favorites</h3>
+            </div>
 
-                    {(Array.isArray(machines) ? machines : []).map((machine) => (
-                        <div
-                            key={machine.id}
-                            className="favorite-card"
-                        >
+            <div className="flexrow">
 
-                            {machine.main_image && (
-                                <img
-                                    src={machine.main_image}
-                                    alt={machine.name}
-                                    className="favorite-image"
-                                />
-                            )}
+                {(Array.isArray(machines) ? machines : []).length === 0 ? (
+                    <p>No favorites yet.</p>
+                ) : (
+                    <div className="flexrow">
 
-                            <h3>{machine.name}</h3>
+                        {(Array.isArray(machines) ? machines : []).map((machine) => (
 
-                            <p>{machine.class}</p>
-                            <p>{machine.size_weight}</p>
-                            <p>{machine.weakness}</p>
+                            <div className="favoritescard">
 
-                            <button
-                                onClick={() =>
-                                    navigate(`/machine/${machine.id}`)
-                                }
-                            >
-                                See more
-                            </button>
+                                <div
+                                    key={machine.id}
+                                    className=""
+                                >
+                                    <div className="container">
+                                        <h3>{machine.name}</h3>
+                                    </div>
 
-                        </div>
-                    ))}
+                                    {machine.main_image && (
+                                        <img
+                                            src={machine.main_image}
+                                            alt={machine.name}
+                                            className="mainimage"
+                                        />
+                                    )}
 
-                </div>
-            )}
+                                    <p><strong>Class:</strong> {machine.class}</p>
+                                    <p><strong>Size:</strong> {machine.size_weight}</p>
+                                    <p><strong>Weakness:</strong> {machine.weakness}</p>
+
+                                    <button className="bouton"
+                                        onClick={() =>
+                                            navigate(`/machine/${machine.id}`)
+                                        }
+                                    >
+                                        See more
+                                    </button>
+
+                                </div>
+                            </div>
+                        ))}
+
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

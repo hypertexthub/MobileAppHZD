@@ -68,7 +68,7 @@ app.post("/register", async (req, res) => {
             }
 
             res.json({
-                message: "User created"
+                message: "User created!"
             });
 
         });
@@ -106,7 +106,7 @@ app.post("/login", (req, res) => {
 
         const user = results[0];
 
-        // VERIFY PASSWORD
+        //password verification
         const validPassword = await bcrypt.compare(
             password,
             user.password_hash
@@ -118,15 +118,15 @@ app.post("/login", (req, res) => {
             });
         }
 
-        // CREATE TOKEN
+        //Token
         const token = uuidv4();
 
-        // EXPIRE IN 7 DAYS
+        //Expire
         const expiresAt = new Date(
             Date.now() + 7 * 24 * 60 * 60 * 1000
         );
 
-        // SAVE SESSION
+        //Save Session
         const sessionSql = `
             INSERT INTO sessions (
                 user_id,
@@ -147,10 +147,10 @@ app.post("/login", (req, res) => {
                     });
                 }
 
-                // SEND COOKIE
+                //Send Cookie
                 res.cookie("session_token", token, {
                     httpOnly: true,
-                    secure: false, // true in production
+                    secure: false, // attention true in production
                     sameSite: "lax",
                     expires: expiresAt
                 });
@@ -253,9 +253,6 @@ app.post("/logout", (req, res) => {
 
 });
 
-
-
-
 //rendering all machines
 
 app.get("/machines", authMiddleware, (req, res) => {
@@ -325,7 +322,7 @@ app.post("/machines/:id/vulnerabilities", authMiddleware, (req, res) => {
 });
 
 
-
+//delete vulnerabilities
 app.delete("/machines/:machineId/vulnerabilities/:id", authMiddleware, (req, res) => {
     const { machineId, id } = req.params;
 
@@ -340,6 +337,7 @@ app.delete("/machines/:machineId/vulnerabilities/:id", authMiddleware, (req, res
     });
 });
 
+//storage image
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, "uploads/");
@@ -367,8 +365,7 @@ const upload = multer({
 });
 
 
-//uploading image
-
+//upload image
 
 app.post("/machines/:id/images", authMiddleware, upload.single("image"), (req, res) => {
     const machineId = req.params.id;
@@ -496,5 +493,28 @@ app.delete("/favorites/:machineId", authMiddleware, (req, res) => {
         if (err) return res.status(500).json(err);
 
         res.json({ message: "Removed from favorites" });
+    });
+});
+
+//searching
+
+app.get("/machines/search/:name", authMiddleware, (req, res) => {
+    const { name } = req.params;
+
+    const q = `
+        SELECT *
+        FROM machines
+        WHERE name LIKE ?
+    `;
+
+    db.query(q, [`%${name}%`], (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({
+                error: "DB error"
+            });
+        }
+
+        return res.json(data);
     });
 });

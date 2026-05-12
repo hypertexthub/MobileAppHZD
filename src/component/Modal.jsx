@@ -17,32 +17,29 @@ const MyModal = ({ isOpen, onClose, onEdit }) => {
         onClose();
     };
 
-
     return (
         <ReactModal isOpen={isOpen} onRequestClose={onClose}>
-            <h2>Add a new Vulnerability</h2>
-            <div>
-                <input className="inputstyle"
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                />
-                <div>
-                    <button onClick={onClose}>Close</button>
-                    <button onClick={handleSave} >Save</button>
-                </div>
+            <div className="modalcontainer">
+                <div className="container">
+                    <h3>Add a new Vulnerability</h3></div>
 
+                <div className="flexcolumn">
+                    <input className="inputstyle"
+                        type="text"
+                        maxLength={256}
+                        placeholder="Enter up to 256 characters..."
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                    />
+                    <div className="flexrow">
+                        <button className="bouton" onClick={onClose}>Close</button>
+                        <button className="bouton" onClick={handleSave} >Save</button>
+                    </div>
+
+                </div>
             </div>
         </ReactModal>
     );
 }
 
 export default MyModal;
-
-// function MyModal({ isOpen, onClose }) {
-//     return (
-//         <Modal isOpen={isOpen} onRequestClose={onClose}>
-//             <h2>My Modal</h2>
-//             <button onClick={onClose}>Close</button>
-//         </Modal>
-//     );
-// }

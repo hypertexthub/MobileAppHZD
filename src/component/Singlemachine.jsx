@@ -30,7 +30,7 @@ const Singlemachine = ({ machines, onEdit }) => {
 
             const formData = new FormData();
             formData.append("image", file);
-            formData.append("category", "ps5");
+            formData.append("category", "PS5");
 
             const res = await fetch(
                 `http://localhost:5001/machines/${id}/images`,
@@ -61,9 +61,6 @@ const Singlemachine = ({ machines, onEdit }) => {
             alert("Image upload failed");
         }
     };
-
-
-
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -135,45 +132,54 @@ const Singlemachine = ({ machines, onEdit }) => {
         }));
     };
 
-
-
     return (
-        <div className="">
+        <div className="containersinglemachine">
 
-            <h2>{machine.name}</h2>
+            <div className="container">
+                <h3>{machine.name}</h3>
+            </div>
 
-            <img
-                src={machine.main_image}
-                alt={machine.name}
-                className='mainimageSingle'
-            />
-
-            <div className="flexrowinfo">
+            <div>
+                <img
+                    src={machine.main_image}
+                    alt={machine.name}
+                    className='mainimageSingle'
+                />
 
                 <div className="aspects">
                     <h4>Aspects</h4>
-                    <p><strong>Class: </strong>{machine.class}</p>
-                    <p><strong>Size: </strong>{machine.size_weight}</p>
-                    <p><strong>Weakness: </strong>{machine.weakness}</p>
-                    <p><strong>Strength: </strong>{machine.strength}</p>
+                    <div className="flexrowaspects">
+                        <p><strong>Class: </strong>{machine.class}</p>
+                        <p><strong>Size: </strong>{machine.size_weight}</p>
+                        <p><strong>Weakness: </strong>{machine.weakness}</p>
+                        <p><strong>Strength: </strong>{machine.strength}</p>
+                    </div>
                 </div>
 
-                <div className="">
-                    <h4>Attacks</h4>
-                    {machine.attacks && machine.attacks.length > 0 ? (
-                        machine.attacks.map((attack, index) => (
-                            <div key={index}>
-                                <p> {attack.type}</p>
-                            </div>
-                        ))
-                    ) : (
-                        <p>No attacks available</p>
-                    )}
+            </div>
+
+            <div className="flexrowinfo">
+                <div className="attackscontainer">
+                    <div> <h4>Attacks</h4></div>
+                    <div className="attacksborder">
+
+                        {machine.attacks && machine.attacks.length > 0 ? (
+                            machine.attacks.map((attack, index) => (
+                                <div key={index}>
+                                    <p> {attack.type}</p>
+                                </div>
+                            ))
+                        ) : (
+                            <p>No attacks available</p>
+                        )}
+
+                    </div>
                 </div>
 
-                <div className="">
+
+                <div className="vulnerabilitiescontainer">
                     <div className="flexrregular">
-                        <h4>Vulnerabilities</h4>
+                        <div><h4>Vulnerabilities</h4></div>
                         <button className="buttonedit">
                             <FaPlus className="icons" onClick={() => setIsOpen(true)}
                             />
@@ -201,7 +207,8 @@ const Singlemachine = ({ machines, onEdit }) => {
             </div>
 
             <div>
-                <h4>Upload your PS5 Images</h4>
+                <div className="containerupload"> <h4>Upload your PS5 Images</h4></div>
+
 
                 <button className="buttonedit" onClick={() => fileRef.current.click()}>
                     <FaPlus className="icons" />
@@ -217,23 +224,20 @@ const Singlemachine = ({ machines, onEdit }) => {
             </div>
 
             <div className="containerImages">
-
-
-
-                <div className="imagesMachine">
+                <div className="">
 
                     {machine.images && machine.images.length > 0 ? (
                         machine.images.map((img) => (
-                            <div key={img.id} className="imagesMachine">
+                            <div key={img.id} className="imagesMachine flexcolumn">
                                 <img className="secondaryimg"
                                     src={img.image_url}
                                     alt="machine"
                                 />
                                 <button className="buttonedit" onClick={() => handleDeleteImage(img.id)}>
-                                    <FaTrash className="icons" />
+                                    <div className="">
+                                        <FaTrash className="icons " />
+                                    </div>
                                 </button>
-
-
                             </div>
                         ))
                     ) : (

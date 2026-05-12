@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 import Header from './component/Header'
-import Filters from './component/Filters'
 import Allmachines from './component/Allmachines'
 import Singlemachine from './component/Singlemachine'
 import Footer from './component/Footer'
@@ -18,6 +17,7 @@ ReactModal.setAppElement("#root")
 function App() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
 
   const fetchUser = async () => {
     try {
@@ -53,9 +53,8 @@ function App() {
     <div className=''>
       <Router>
 
-        {user && <Header setUser={setUser} />}
+        {user && <Header title='Search' search={search} setSearch={setSearch} />}
         {user && <Nav setUser={setUser} />}
-        {user && <Filters setUser={setUser} />}
         <Routes>
           <Route path="/login" element={<Login fetchUser={fetchUser} />} />
           <Route path="/register" element={<Createuser />} />
@@ -63,7 +62,7 @@ function App() {
             path="/"
             element={
               <Protectedroute user={user}>
-                <Allmachines />
+                <Allmachines search={search} />
               </Protectedroute>
             }
           />
