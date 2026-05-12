@@ -29,4 +29,3 @@ Image upload handling
 ![App Screenshot](ScreenShots/05.png)
 ![App Screenshot](ScreenShots/06.png)
 ![App Screenshot](ScreenShots/07.png)
-![App Screenshot](ScreenShots/08.png)
